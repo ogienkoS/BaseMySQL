@@ -95,7 +95,7 @@ namespace BaseSQL
                 }*/
 
                 AddLog("Аккаунт: " + metroTextBox1.Text + " успешно получил ГМ доступ "+ metroTextBox3.Text+" уровня!", false);
-                //metroLabel1.Text = bindingSorce;
+                
 
 
             }
