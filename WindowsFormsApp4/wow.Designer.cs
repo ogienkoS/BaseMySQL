@@ -30,24 +30,24 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -76,69 +76,31 @@
             this.tabPage1.Text = "Прописать ГМ аккаунт";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // dataGridView1
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(462, 232);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Тест";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(305, 6);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(151, 64);
+            this.dataGridView1.TabIndex = 6;
             // 
-            // metroTextBox1
+            // richTextBox1
             // 
-            this.metroTextBox1.Location = new System.Drawing.Point(6, 19);
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.Size = new System.Drawing.Size(120, 23);
-            this.metroTextBox1.TabIndex = 0;
+            this.richTextBox1.Location = new System.Drawing.Point(185, 157);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(274, 69);
+            this.richTextBox1.TabIndex = 5;
+            this.richTextBox1.Text = "";
             // 
-            // groupBox1
+            // metroButton2
             // 
-            this.groupBox1.Controls.Add(this.metroLabel1);
-            this.groupBox1.Controls.Add(this.metroTextBox1);
-            this.groupBox1.Controls.Add(this.metroButton1);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(275, 70);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Введи имя аккаунта:";
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(142, 19);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(127, 23);
-            this.metroButton1.TabIndex = 2;
-            this.metroButton1.Text = "Чекнуть ID аккаунта";
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(24, 45);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(81, 19);
-            this.metroLabel1.TabIndex = 1;
-            this.metroLabel1.Text = "metroLabel1";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.metroTextBox2);
-            this.groupBox2.Location = new System.Drawing.Point(6, 82);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(120, 56);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Введи ID аккаунта:";
-            // 
-            // metroTextBox2
-            // 
-            this.metroTextBox2.Location = new System.Drawing.Point(6, 19);
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.Size = new System.Drawing.Size(108, 23);
-            this.metroTextBox2.TabIndex = 0;
+            this.metroButton2.Location = new System.Drawing.Point(185, 128);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(96, 23);
+            this.metroButton2.TabIndex = 4;
+            this.metroButton2.Text = "Выдать права";
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click_1);
             // 
             // groupBox3
             // 
@@ -156,32 +118,71 @@
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.Size = new System.Drawing.Size(108, 23);
             this.metroTextBox3.TabIndex = 0;
+            this.metroTextBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox3_KeyPress);
             // 
-            // metroButton2
+            // groupBox2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(185, 128);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(96, 23);
-            this.metroButton2.TabIndex = 4;
-            this.metroButton2.Text = "Выдать права";
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click_1);
+            this.groupBox2.Controls.Add(this.metroTextBox2);
+            this.groupBox2.Location = new System.Drawing.Point(6, 82);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(120, 56);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Введи ID аккаунта:";
             // 
-            // richTextBox1
+            // metroTextBox2
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(185, 157);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(274, 69);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
+            this.metroTextBox2.Location = new System.Drawing.Point(6, 19);
+            this.metroTextBox2.Name = "metroTextBox2";
+            this.metroTextBox2.Size = new System.Drawing.Size(108, 23);
+            this.metroTextBox2.TabIndex = 0;
+            this.metroTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox2_KeyPress);
             // 
-            // dataGridView1
+            // groupBox1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(305, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(151, 64);
-            this.dataGridView1.TabIndex = 6;
+            this.groupBox1.Controls.Add(this.metroLabel1);
+            this.groupBox1.Controls.Add(this.metroTextBox1);
+            this.groupBox1.Controls.Add(this.metroButton1);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(275, 70);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Введи имя аккаунта:";
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(24, 45);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(0, 0);
+            this.metroLabel1.TabIndex = 1;
+            // 
+            // metroTextBox1
+            // 
+            this.metroTextBox1.Location = new System.Drawing.Point(6, 19);
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.Size = new System.Drawing.Size(120, 23);
+            this.metroTextBox1.TabIndex = 0;
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(142, 19);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(127, 23);
+            this.metroButton1.TabIndex = 2;
+            this.metroButton1.Text = "Чекнуть ID аккаунта";
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(462, 232);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Тест";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // wow
             // 
@@ -194,11 +195,11 @@
             this.Load += new System.EventHandler(this.wow_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

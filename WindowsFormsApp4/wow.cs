@@ -39,13 +39,16 @@ namespace BaseSQL
                 DataSet dataset = new DataSet();
                 adapter.Fill(dataset);
                 BindingSource bindingSorce = new BindingSource();
+                
                 if (dataset.Tables.Count == 1)
                 {
                     bindingSorce.DataSource = dataset.Tables[0];
                     dataGridView1.DataSource = bindingSorce;
                 }
-               
-               AddLog("ID аккаунта: " + metroTextBox1.Text + " успешно получен!", false);
+                UInt32 reg = (UInt32)command.ExecuteScalar();
+                metroLabel1.Text ="ID аккаунта: " + command.ExecuteScalar().ToString();
+
+                AddLog("ID аккаунта: " + metroTextBox1.Text + " успешно получен!", false);
                 //metroLabel1.Text = ;
 
 
@@ -54,7 +57,7 @@ namespace BaseSQL
             {
                AddLog("Аккаунта с именем " + metroTextBox1.Text + " не существует.", true);
             }
-           
+
         }
 
         private void AddLog(string log, bool error)
@@ -75,6 +78,7 @@ namespace BaseSQL
 
         private void metroButton2_Click_1(object sender, EventArgs e)
         {
+            //int z = Convert.ToInt32(textBox1.Text);
             try
             {
 
@@ -102,6 +106,26 @@ namespace BaseSQL
 
         }
 
-        
+        private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == (char)Keys.Back)
+                e.Handled = false;
+        }
+
+        private void metroTextBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == (char)Keys.Back)
+                e.Handled = false;
+        }
     }
 }
