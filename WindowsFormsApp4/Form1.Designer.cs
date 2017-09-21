@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp4
+﻿namespace BaseSQL
 {
     partial class Form1
     {
@@ -75,7 +75,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.BackColor = System.Drawing.SystemColors.MenuBar;
             this.richTextBox1.ForeColor = System.Drawing.Color.Gray;

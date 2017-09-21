@@ -38,10 +38,14 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -79,7 +83,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(305, 6);
+            this.dataGridView1.Location = new System.Drawing.Point(305, 87);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(151, 64);
@@ -89,6 +93,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(185, 157);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(274, 69);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
@@ -115,6 +120,7 @@
             // metroTextBox3
             // 
             this.metroTextBox3.Location = new System.Drawing.Point(6, 19);
+            this.metroTextBox3.MaxLength = 1;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.Size = new System.Drawing.Size(108, 23);
             this.metroTextBox3.TabIndex = 0;
@@ -140,15 +146,34 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.metroLabel5);
+            this.groupBox1.Controls.Add(this.metroLabel4);
             this.groupBox1.Controls.Add(this.metroLabel1);
             this.groupBox1.Controls.Add(this.metroTextBox1);
             this.groupBox1.Controls.Add(this.metroButton1);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(275, 70);
+            this.groupBox1.Size = new System.Drawing.Size(450, 70);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Введи имя аккаунта:";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(353, 19);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(0, 0);
+            this.metroLabel5.TabIndex = 4;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(299, 19);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(52, 19);
+            this.metroLabel4.TabIndex = 3;
+            this.metroLabel4.Text = "Гм лвл:";
             // 
             // metroLabel1
             // 
@@ -184,12 +209,39 @@
             this.tabPage2.Text = "Тест";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.metroLabel2.Location = new System.Drawing.Point(348, 38);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(52, 25);
+            this.metroLabel2.TabIndex = 1;
+            this.metroLabel2.Text = "База:";
+            // 
+            // label1
+            // 
+            this.label1.AccessibleDescription = "";
+            this.label1.AccessibleName = "";
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label1.Location = new System.Drawing.Point(393, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // wow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(516, 334);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.metroLabel2);
             this.Name = "wow";
             this.Text = "World Of Warcraft";
             this.Load += new System.EventHandler(this.wow_Load);
@@ -201,6 +253,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -220,5 +273,9 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private System.Windows.Forms.Label label1;
     }
 }

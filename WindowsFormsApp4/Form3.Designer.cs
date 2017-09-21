@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp4
+﻿namespace BaseSQL
 {
     partial class Form3
     {

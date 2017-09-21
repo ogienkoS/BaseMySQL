@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-namespace WindowsFormsApp4
+namespace BaseSQL
 {
     public static class DataBase
     {
         public static MySqlConnection connect;
+
+        public static bool connectionDB { get; internal set; }
+        public static object Connection { get; internal set; }
+        
+
         public static bool connectDB(string host, int port, string user, string password, string DB)
         {
             try
@@ -22,7 +27,7 @@ namespace WindowsFormsApp4
             {
                 return false;
             }
-
+            
         }
     }
 }

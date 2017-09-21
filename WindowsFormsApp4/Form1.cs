@@ -12,7 +12,7 @@ using MetroFramework.Components;
 using MetroFramework.Forms;
 using MySql.Data.MySqlClient;
 
-namespace WindowsFormsApp4
+namespace BaseSQL
 {
     public partial class Form1 : MetroForm
     {

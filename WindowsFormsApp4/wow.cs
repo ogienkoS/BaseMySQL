@@ -13,11 +13,16 @@ using MetroFramework.Forms;
 using System.Media;
 using MySql.Data.MySqlClient;
 using WindowsFormsApp4;
+using System.Collections.ObjectModel;
+using System.Data.SqlClient;
+using System.Data.Common;
 
 namespace BaseSQL
 {
     public partial class wow : MetroForm
     {
+        
+
         public wow()
         {
             InitializeComponent();
@@ -25,37 +30,55 @@ namespace BaseSQL
 
         private void wow_Load(object sender, EventArgs e)
         {
-
+          
         }
         
+
+       
+
         private void metroButton1_Click(object sender, EventArgs e)
         {
+            
+            metroLabel5.Text = "";
+            metroLabel1.Text = "";
             try
             {
                 
-                string query_namebase = "SELECT id from account where username = '"+ metroTextBox1.Text +"'"; 
+                string query_namebase = "SELECT id from account where username = '"+ metroTextBox1.Text +"'";
                 MySqlCommand command = new MySqlCommand(query_namebase, DataBase.connect);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                 DataSet dataset = new DataSet();
                 adapter.Fill(dataset);
-                BindingSource bindingSorce = new BindingSource();
-                
+                BindingSource bindingSorce = new BindingSource();   
                 if (dataset.Tables.Count == 1)
                 {
                     bindingSorce.DataSource = dataset.Tables[0];
                     dataGridView1.DataSource = bindingSorce;
                 }
+
                 UInt32 reg = (UInt32)command.ExecuteScalar();
                 metroLabel1.Text ="ID аккаунта: " + command.ExecuteScalar().ToString();
-
+                
                 AddLog("ID аккаунта: " + metroTextBox1.Text + " успешно получен!", false);
-                //metroLabel1.Text = ;
 
-
+                string check_admin = string.Format("SELECT gmlevel from account_access where id = '" + command.ExecuteScalar().ToString() + "'");
+                MySqlCommand query_check_admin = new MySqlCommand(check_admin, DataBase.connect);
+                query_check_admin.Prepare();
+                query_check_admin.ExecuteNonQuery();
+                if (query_check_admin.ExecuteScalar() == null)
+                {
+                    metroLabel5.Text = " 0";
+                }
+                else
+                {
+                    metroLabel5.Text = query_check_admin.ExecuteScalar().ToString();
+                }
+               
             }
             catch
             {
                AddLog("Аккаунта с именем " + metroTextBox1.Text + " не существует.", true);
+                
             }
 
         }
@@ -78,7 +101,7 @@ namespace BaseSQL
 
         private void metroButton2_Click_1(object sender, EventArgs e)
         {
-            //int z = Convert.ToInt32(textBox1.Text);
+            
             try
             {
 
@@ -126,6 +149,11 @@ namespace BaseSQL
             }
             if (e.KeyChar == (char)Keys.Back)
                 e.Handled = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Refresh();
         }
     }
 }

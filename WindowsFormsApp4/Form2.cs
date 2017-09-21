@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-namespace WindowsFormsApp4
+namespace BaseSQL
 {
     public partial class Form2 : Form
     {

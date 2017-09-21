@@ -14,7 +14,7 @@ using MetroFramework.Forms;
 using System.Media;
 using BaseSQL;
 
-namespace WindowsFormsApp4
+namespace BaseSQL
 {
     public partial class Form3 : MetroForm
     {
@@ -71,7 +71,7 @@ namespace WindowsFormsApp4
                 wow frm = new wow();
                 frm.Show();
                 this.Hide();
-                
+
             }
 
 
@@ -80,7 +80,7 @@ namespace WindowsFormsApp4
             {
                 if (metroCheckBox1.Checked == true)
                 {
-                    
+
                 }
                 else
                 {
@@ -91,9 +91,9 @@ namespace WindowsFormsApp4
                     Pl.SoundLocation = "C:\\WINDOWS\\Media\\notify.wav";
                     Pl.Play();
                 }
-               
+
             }
-        
+
             else
             {
                 MetroStyleManager.Default.Style = MetroColorStyle.Red;
@@ -103,7 +103,7 @@ namespace WindowsFormsApp4
                 SoundPlayer Pl = new SoundPlayer();
                 Pl.SoundLocation = "C:\\WINDOWS\\Media\\Windows Unlock.wav";
                 Pl.Play();
-                
+
             }
             metroProgressSpinner1.Visible = false;
 
@@ -127,5 +127,3 @@ namespace WindowsFormsApp4
         }*/
     }
 }
-    
-
