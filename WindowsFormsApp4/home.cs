@@ -14,9 +14,9 @@ using MySql.Data.MySqlClient;
 
 namespace BaseSQL
 {
-    public partial class Form1 : MetroForm
+    public partial class home : MetroForm
     {
-        public Form1()
+        public home()
         {
             InitializeComponent();
             

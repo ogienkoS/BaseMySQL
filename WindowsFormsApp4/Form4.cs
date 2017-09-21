@@ -46,7 +46,7 @@ namespace BaseSQL
             bool result = DataBase.connectDB(metroTextBox1.Text/*ip сервака*/, int.Parse(metroTextBox2.Text)/*порт сервака*/, metroTextBox5.Text/*логин*/, metroTextBox4.Text/*название бд*/, metroTextBox3.Text/*пароль*/);
             if (result)
             {
-                Form1 frm = new Form1();
+                home frm = new home();
                 frm.Show();
                 this.Hide();
                 SoundPlayer Pl = new SoundPlayer();

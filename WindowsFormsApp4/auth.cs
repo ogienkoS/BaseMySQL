@@ -12,13 +12,12 @@ using MetroFramework;
 using MetroFramework.Components;
 using MetroFramework.Forms;
 using System.Media;
-using BaseSQL;
 
 namespace BaseSQL
 {
-    public partial class Form3 : MetroForm
+    public partial class auth : MetroForm
     {
-        public Form3()
+        public auth()
         {
             InitializeComponent();
             /*timer1.Interval = 3000;
@@ -84,7 +83,7 @@ namespace BaseSQL
                 }
                 else
                 {
-                    Form1 frm = new Form1();
+                    home frm = new home();
                     frm.Show();
                     this.Hide();
                     SoundPlayer Pl = new SoundPlayer();
