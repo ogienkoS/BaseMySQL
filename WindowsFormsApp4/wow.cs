@@ -1,55 +1,63 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework;
-using MetroFramework.Components;
 using MetroFramework.Forms;
-using System.Media;
 using MySql.Data.MySqlClient;
-using WindowsFormsApp4;
-using System.Collections.ObjectModel;
-using System.Data.SqlClient;
-using System.Data.Common;
+using MetroFramework.Components;
+using MetroFramework;
 
 namespace BaseSQL
 {
     public partial class wow : MetroForm
     {
-        
+
 
         public wow()
         {
             InitializeComponent();
+            timer1.Enabled = true;
         }
 
         private void wow_Load(object sender, EventArgs e)
         {
-          
+            CheckConnection();
         }
-        
 
-       
+        private void CheckConnection()
+        {
+            try
+            {
+                string query_Test = "SELECT 1";
+                MySqlCommand command_Test = new MySqlCommand(query_Test, DataBase.connect);
+                command_Test.ExecuteNonQuery();
+                MetroStyleManager.Default.Style = MetroColorStyle.Green;
+                label1.ForeColor = Color.Green;
+                label1.Text = "Online";
+            }
+            catch
+            {
+                MetroStyleManager.Default.Style = MetroColorStyle.Red;
+                label1.ForeColor = Color.Red;
+                label1.Text = "Offline";
+            }
+        }
+
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            
+
             metroLabel5.Text = "";
             metroLabel1.Text = "";
             try
             {
-                
-                string query_namebase = "SELECT id from account where username = '"+ metroTextBox1.Text +"'";
+
+                string query_namebase = "SELECT id from account where username = '" + metroTextBox1.Text + "'";
                 MySqlCommand command = new MySqlCommand(query_namebase, DataBase.connect);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                 DataSet dataset = new DataSet();
                 adapter.Fill(dataset);
-                BindingSource bindingSorce = new BindingSource();   
+                BindingSource bindingSorce = new BindingSource();
                 if (dataset.Tables.Count == 1)
                 {
                     bindingSorce.DataSource = dataset.Tables[0];
@@ -57,8 +65,8 @@ namespace BaseSQL
                 }
 
                 UInt32 reg = (UInt32)command.ExecuteScalar();
-                metroLabel1.Text ="ID аккаунта: " + command.ExecuteScalar().ToString();
-                
+                metroLabel1.Text = "ID аккаунта: " + command.ExecuteScalar().ToString();
+
                 AddLog("ID аккаунта: " + metroTextBox1.Text + " успешно получен!", false);
 
                 string check_admin = string.Format("SELECT gmlevel from account_access where id = '" + command.ExecuteScalar().ToString() + "'");
@@ -73,12 +81,12 @@ namespace BaseSQL
                 {
                     metroLabel5.Text = query_check_admin.ExecuteScalar().ToString();
                 }
-               
+
             }
             catch
             {
-               AddLog("Аккаунта с именем " + metroTextBox1.Text + " не существует.", true);
-                
+                AddLog("Аккаунта с именем " + metroTextBox1.Text + " не существует.", true);
+
             }
 
         }
@@ -101,11 +109,11 @@ namespace BaseSQL
 
         private void metroButton2_Click_1(object sender, EventArgs e)
         {
-            
+
             try
             {
 
-                string query_namebase = "INSERT INTO `account_access` (`id`, `gmlevel`) VALUES ('"+metroTextBox2.Text+"','"+metroTextBox3.Text+"')";
+                string query_namebase = "INSERT INTO `account_access` (`id`, `gmlevel`) VALUES ('" + metroTextBox2.Text + "','" + metroTextBox3.Text + "')";
                 MySqlCommand command = new MySqlCommand(query_namebase, DataBase.connect);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                 DataSet dataset = new DataSet();
@@ -116,9 +124,14 @@ namespace BaseSQL
                     bindingSorce.DataSource = dataset.Tables[0];
                     dataGridView1.DataSource = bindingSorce;
                 }*/
+                //if ((metroTextBox2.Text.Equals("")) || ((metroTextBox3.Text.Equals(""))))
+                //{
+                //    metroLabel3.Text = " Заполните все поля!";
+                //    return;
+                //}
 
-                AddLog("Аккаунт: " + metroTextBox1.Text + " успешно получил ГМ доступ "+ metroTextBox3.Text+" уровня!", false);
-                
+                AddLog("Аккаунт: " + metroTextBox1.Text + " успешно получил ГМ доступ " + metroTextBox3.Text + " уровня!", false);
+
 
 
             }
@@ -154,6 +167,13 @@ namespace BaseSQL
         private void label1_Click(object sender, EventArgs e)
         {
             this.Refresh();
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            CheckConnection();
         }
     }
+
 }

@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 namespace BaseSQL
 {
+    
     public static class DataBase
     {
+        
         public static MySqlConnection connect;
 
         public static bool connectionDB { get; internal set; }
         public static object Connection { get; internal set; }
+        
         
 
         public static bool connectDB(string host, int port, string user, string password, string DB)

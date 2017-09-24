@@ -1,13 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using MetroFramework;
 using MetroFramework.Components;
 using MetroFramework.Forms;
@@ -65,6 +56,7 @@ namespace BaseSQL
                 metroLabel1.Text = "     Данные не заполнены";
                 return;
             }
+            bool result = DataBase.connectDB(metroTextBox1.Text, int.Parse(metroTextBox5.Text), metroTextBox3.Text, metroTextBox4.Text, metroTextBox2.Text);
             if (metroCheckBox1.Checked == true)
             {
                 wow frm = new wow();
@@ -72,9 +64,6 @@ namespace BaseSQL
                 this.Hide();
 
             }
-
-
-            bool result = DataBase.connectDB(metroTextBox1.Text, int.Parse(metroTextBox5.Text), metroTextBox3.Text, metroTextBox4.Text, metroTextBox2.Text);
             if (result)
             {
                 if (metroCheckBox1.Checked == true)
