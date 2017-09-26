@@ -109,26 +109,23 @@ namespace BaseSQL
 
         private void metroButton2_Click_1(object sender, EventArgs e)
         {
-
+            if ((metroTextBox2.Text.Equals("")) || ((metroTextBox3.Text.Equals(""))))
+            {
+                label2.Text = "Заполните поля ID и Гм-LvL";
+                label2.ForeColor = Color.Red;
+                return;
+            }
             try
             {
-
+                
                 string query_namebase = "INSERT INTO `account_access` (`id`, `gmlevel`) VALUES ('" + metroTextBox2.Text + "','" + metroTextBox3.Text + "')";
                 MySqlCommand command = new MySqlCommand(query_namebase, DataBase.connect);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                 DataSet dataset = new DataSet();
                 adapter.Fill(dataset);
-                /*ndingSource bindingSorce = new BindingSource();
-                if (dataset.Tables.Count == 1)
-                {
-                    bindingSorce.DataSource = dataset.Tables[0];
-                    dataGridView1.DataSource = bindingSorce;
-                }*/
-                //if ((metroTextBox2.Text.Equals("")) || ((metroTextBox3.Text.Equals(""))))
-                //{
-                //    metroLabel3.Text = " Заполните все поля!";
-                //    return;
-                //}
+
+
+                
 
                 AddLog("Аккаунт: " + metroTextBox1.Text + " успешно получил ГМ доступ " + metroTextBox3.Text + " уровня!", false);
 
@@ -139,7 +136,20 @@ namespace BaseSQL
             {
                 AddLog("Аккаунт " + metroTextBox1.Text + " не существует.", true);
             }
+            if (metroLabel1.Text == null)
+            {
+                metroLabel5.Text = "ошибка";
 
+            }
+            else
+            {
+                string update_gm = string.Format("UPDATE `account_access` SET `gmlevel`='" + metroTextBox3.Text + "' WHERE (`id`='" + metroTextBox2.Text + "')");
+                MySqlCommand query_update_gm = new MySqlCommand(update_gm, DataBase.connect);
+                query_update_gm.Prepare();
+                query_update_gm.ExecuteNonQuery();
+                AddLog("Аккаунт: " + metroTextBox1.Text + " успешно обновил ГМ доступ до " + metroTextBox3.Text + " уровня!", false);
+            }
+            
         }
 
         private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
@@ -174,6 +184,16 @@ namespace BaseSQL
         {
             CheckConnection();
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //private void tabPage1_Click(object sender, EventArgs e)
+        //{
+
+        //}
     }
 
 }

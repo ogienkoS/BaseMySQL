@@ -48,6 +48,7 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -68,6 +69,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.richTextBox1);
             this.tabPage1.Controls.Add(this.metroButton2);
@@ -81,6 +83,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Прописать ГМ аккаунт";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // dataGridView1
             // 
@@ -112,7 +115,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.metroTextBox3);
-            this.groupBox3.Location = new System.Drawing.Point(6, 144);
+            this.groupBox3.Location = new System.Drawing.Point(6, 160);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(169, 56);
             this.groupBox3.TabIndex = 3;
@@ -241,6 +244,15 @@
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(9, 143);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 7;
+            // 
             // wow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,6 +266,7 @@
             this.Load += new System.EventHandler(this.wow_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -285,5 +298,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private System.Windows.Forms.Label label2;
     }
 }
