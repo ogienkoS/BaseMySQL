@@ -6,6 +6,8 @@ using MetroFramework.Forms;
 using MySql.Data.MySqlClient;
 using MetroFramework.Components;
 using MetroFramework;
+using System.Threading;
+using System.Media;
 
 namespace BaseSQL
 {
@@ -16,31 +18,53 @@ namespace BaseSQL
         public wow()
         {
             InitializeComponent();
-            timer1.Enabled = true;
-        }
 
+        }
+        Thread potok;
         private void wow_Load(object sender, EventArgs e)
         {
-            CheckConnection();
+            potok = new Thread(CheckConnection);
+            potok.Start();
         }
 
-        private void CheckConnection()
+        void CheckConnection()
         {
-            try
+            while (true)
             {
-                string query_Test = "SELECT 1";
-                MySqlCommand command_Test = new MySqlCommand(query_Test, DataBase.connect);
-                command_Test.ExecuteNonQuery();
-                MetroStyleManager.Default.Style = MetroColorStyle.Green;
-                label1.ForeColor = Color.Green;
-                label1.Text = "Online";
+                if(DataBase.CheckDB())
+                {
+                    BeginInvoke(new Action(delegate ()
+                    {
+                        MetroStyleManager.Default.Style = MetroColorStyle.Green;
+                        label1.ForeColor = Color.Green;
+                        label1.Text = "Online";
+                        metroButton1.Enabled = true;
+                        metroButton2.Enabled = true;
+                        metroTextBox1.Enabled = true;
+                        metroTextBox2.Enabled = true;
+                        metroTextBox3.Enabled = true;
+
+                    }));
+
+                }
+                else
+                {
+                    BeginInvoke(new Action(delegate ()
+                    {
+                        MetroStyleManager.Default.Style = MetroColorStyle.Red;
+                        label1.ForeColor = Color.Red;
+                        label1.Text = "Offline";
+                        metroButton1.Enabled = false;
+                        metroButton2.Enabled = false;
+                        metroTextBox1.Enabled = false;
+                        metroTextBox2.Enabled = false;
+                        metroTextBox3.Enabled = false;
+                    }));
+                    DataBase.connectDB();
+                }
+                Thread.Sleep(500);
             }
-            catch
-            {
-                MetroStyleManager.Default.Style = MetroColorStyle.Red;
-                label1.ForeColor = Color.Red;
-                label1.Text = "Offline";
-            }
+            
         }
 
 
@@ -177,22 +201,22 @@ namespace BaseSQL
         private void label1_Click(object sender, EventArgs e)
         {
             this.Refresh();
-
+            Notifi();
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
+        private NotifyIcon NI = new NotifyIcon();
+        Icon myIcon = new Icon("notify.ico");
+        public void Notifi()
         {
-            CheckConnection();
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+            NI.Icon = myIcon;
+            NI.BalloonTipText = "Запрос успешно выполнен!";
+            NI.BalloonTipTitle = "WoW Mode ";
+            NI.BalloonTipIcon = ToolTipIcon.None; //тут тип ошибка инфа и т.д
+            NI.Icon = this.Icon;
+            NI.Visible = true;
+            NI.ShowBalloonTip(1000);
+        }   
         //private void tabPage1_Click(object sender, EventArgs e)
         //{
-
         //}
     }
 

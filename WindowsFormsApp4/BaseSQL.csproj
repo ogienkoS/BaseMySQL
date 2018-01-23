@@ -151,7 +151,8 @@
   <ItemGroup>
     <Content Include="base.ico" />
     <Content Include="MetroFramework.txt" />
-    <None Include="Resources\if_wow_ilidan_49686.ico" />
+    <Content Include="Resources\notify.ico" />
+    <None Include="Resources\wow.ico" />
     <None Include="Resources\notify.wav" />
     <None Include="Resources\Windows Unlock.wav" />
   </ItemGroup>

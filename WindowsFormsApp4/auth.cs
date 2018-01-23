@@ -60,8 +60,9 @@ namespace BaseSQL
             if (metroCheckBox1.Checked == true)
             {
                 wow frm = new wow();
-                frm.Show();
-                this.Hide();
+                //frm.Show();
+                //this.Hide();
+                
 
             }
             if (result)

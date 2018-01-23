@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(wow));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -49,7 +48,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -84,7 +82,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Прописать ГМ аккаунт";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // label2
             // 
@@ -249,11 +246,6 @@
             this.label1.TabIndex = 3;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 5000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // wow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,7 +291,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.Label label2;
     }
