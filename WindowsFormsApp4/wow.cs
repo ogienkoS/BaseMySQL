@@ -215,9 +215,9 @@ namespace BaseSQL
             NI.Visible = true;
             NI.ShowBalloonTip(1000);
         }   
-        //private void tabPage1_Click(object sender, EventArgs e)
-        //{
-        //}
+       private void tabPage1_Click(object sender, EventArgs e)
+        {
+        }
     }
 
 }

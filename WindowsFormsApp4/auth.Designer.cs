@@ -136,9 +136,9 @@
             // 
             // metroTextBox5
             // 
-            this.metroTextBox5.Location = new System.Drawing.Point(6, 19);
+            this.metroTextBox5.Location = new System.Drawing.Point(6, 16);
             this.metroTextBox5.Name = "metroTextBox5";
-            this.metroTextBox5.Size = new System.Drawing.Size(57, 20);
+            this.metroTextBox5.Size = new System.Drawing.Size(57, 23);
             this.metroTextBox5.TabIndex = 10;
             this.metroTextBox5.Text = "3306";
             // 
@@ -195,7 +195,7 @@
             this.metroCheckBox1.Text = "WoW mode";
             this.metroCheckBox1.UseVisualStyleBackColor = true;
             // 
-            // Form3
+            // auth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -213,7 +213,7 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox5);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form3";
+            this.Name = "auth";
             this.Resizable = false;
             this.Text = "Вход";
             this.Load += new System.EventHandler(this.Form3_Load);

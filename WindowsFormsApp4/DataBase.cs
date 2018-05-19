@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 namespace BaseSQL
 {
-    
+
     public static class DataBase
     {
         
@@ -27,7 +22,7 @@ namespace BaseSQL
                 _user = user;
                 _password = password;
                 _DB = DB;
-                string connsql = "server = " + host + "; port = " + port + "; user = " + user + "; database = " + DB + "; password = " + password + ";";
+                string connsql = "server = " + host + "; port = " + port + "; user = " + user + "; database = " + DB + "; password = " + password + ";SslMode=none";
                 connect = new MySqlConnection(connsql);
                 connect.Open();
                 return true;
@@ -36,13 +31,13 @@ namespace BaseSQL
             {
                 return false;
             }
-            
+
         }
         public static bool connectDB()
         {
             try
             {
-                string connsql = "server = " + _host + "; port = " + _port + "; user = " + _user + "; database = " + _DB + "; password = " + _password + ";";
+                string connsql = "server = " + _host + "; port = " + _port + "; user = " + _user + "; database = " + _DB + "; password = " + _password + ";SslMode=nonel";
                 connect = new MySqlConnection(connsql);
                 connect.Open();
                 return true;
