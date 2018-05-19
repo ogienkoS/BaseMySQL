@@ -35,6 +35,7 @@ namespace BaseSQL
                 {
                     BeginInvoke(new Action(delegate ()
                     {
+                        
                         MetroStyleManager.Default.Style = MetroColorStyle.Green;
                         label1.ForeColor = Color.Green;
                         label1.Text = "Online";
@@ -51,6 +52,7 @@ namespace BaseSQL
                 {
                     BeginInvoke(new Action(delegate ()
                     {
+                        
                         MetroStyleManager.Default.Style = MetroColorStyle.Red;
                         label1.ForeColor = Color.Red;
                         label1.Text = "Offline";
@@ -63,6 +65,7 @@ namespace BaseSQL
                     DataBase.connectDB();
                 }
                 Thread.Sleep(500);
+
             }
             
         }
@@ -70,7 +73,7 @@ namespace BaseSQL
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-
+            Notifi();
             metroLabel5.Text = "";
             metroLabel1.Text = "";
             try
@@ -200,8 +203,16 @@ namespace BaseSQL
 
         private void label1_Click(object sender, EventArgs e)
         {
+            if (label1.Text == "Online")
+            {
+                Notifi_On();
+            }
+            else
+            {
+                Notifi_Off();
+            }
             this.Refresh();
-            Notifi();
+            
         }
         private NotifyIcon NI = new NotifyIcon();
         Icon myIcon = new Icon("notify.ico");
@@ -214,8 +225,28 @@ namespace BaseSQL
             NI.Icon = this.Icon;
             NI.Visible = true;
             NI.ShowBalloonTip(1000);
-        }   
-       private void tabPage1_Click(object sender, EventArgs e)
+        }
+        public void Notifi_On()
+        {
+            NI.Icon = myIcon;
+            NI.BalloonTipText = "Подключение установлено";
+            NI.BalloonTipTitle = "WoW Mode ";
+            NI.BalloonTipIcon = ToolTipIcon.None; //тут тип ошибка инфа и т.д
+            NI.Icon = this.Icon;
+            NI.Visible = true;
+            NI.ShowBalloonTip(1000);
+        }
+        public void Notifi_Off()
+        {
+            NI.Icon = myIcon;
+            NI.BalloonTipText = "Подключение разорвано";
+            NI.BalloonTipTitle = "WoW Mode ";
+            NI.BalloonTipIcon = ToolTipIcon.None; //тут тип ошибка инфа и т.д
+            NI.Icon = this.Icon;
+            NI.Visible = true;
+            NI.ShowBalloonTip(1000);
+        }
+        private void tabPage1_Click(object sender, EventArgs e)
         {
         }
     }

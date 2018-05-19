@@ -51,11 +51,11 @@ namespace BaseSQL
         {
             metroProgressSpinner1.Visible = true;
 
-            /*if ((metroTextBox1.Text.Equals("")) || (metroTextBox2.Text.Equals("")) || (metroTextBox3.Text.Equals("")) || (metroTextBox4.Text.Equals("") || (metroTextBox5.Text.Equals(""))))
+            if ((metroTextBox1.Text.Equals("")) || (metroTextBox2.Text.Equals("")) || (metroTextBox3.Text.Equals("")) || (metroTextBox4.Text.Equals("") || (metroTextBox5.Text.Equals(""))))
             {
                 metroLabel1.Text = "     Данные не заполнены";
                 return;
-            }*/
+            }
             bool result = DataBase.connectDB(metroTextBox1.Text, int.Parse(metroTextBox5.Text), metroTextBox3.Text, metroTextBox4.Text, metroTextBox2.Text);
             if (metroCheckBox1.Checked == true)
             {
