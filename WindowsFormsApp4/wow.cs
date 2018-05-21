@@ -25,6 +25,8 @@ namespace BaseSQL
         {
             potok = new Thread(CheckConnection);
             potok.Start();
+            timer2.Enabled = true;
+            
         }
 
         void CheckConnection()
@@ -249,6 +251,40 @@ namespace BaseSQL
         private void tabPage1_Click(object sender, EventArgs e)
         {
         }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            int PingResult;
+            if(label1.Text == "Online")
+            {
+                System.Net.NetworkInformation.Ping ping = new System.Net.NetworkInformation.Ping();
+                System.Net.NetworkInformation.PingReply pingReply = ping.Send(DataBase._host);
+                System.Net.IPAddress addres = pingReply.Address;
+                label3.Text = pingReply.RoundtripTime.ToString("00 мс");
+                
+            }
+            else
+            {
+                timer2.Enabled = false;
+                label3.Enabled = false;
+            }
+
+            //if(label3.Text == "00 мс")
+            //{
+            //    label3.ForeColor = Color.Red;
+            //}
+            
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //private void label3_Click(object sender, EventArgs e)
+        //{
+
+        //}
     }
 
 }
