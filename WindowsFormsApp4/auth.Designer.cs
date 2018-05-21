@@ -190,6 +190,7 @@
             this.metroCheckBox1.AutoSize = true;
             this.metroCheckBox1.Checked = true;
             this.metroCheckBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.metroCheckBox1.Enabled = false;
             this.metroCheckBox1.Location = new System.Drawing.Point(64, 345);
             this.metroCheckBox1.Name = "metroCheckBox1";
             this.metroCheckBox1.Size = new System.Drawing.Size(86, 15);

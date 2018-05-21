@@ -18,7 +18,7 @@ namespace BaseSQL
         public wow()
         {
             InitializeComponent();
-
+            
         }
         Thread potok;
         private void wow_Load(object sender, EventArgs e)
@@ -178,7 +178,7 @@ namespace BaseSQL
                 query_update_gm.ExecuteNonQuery();
                 AddLog("Аккаунт: " + metroTextBox1.Text + " успешно обновил ГМ доступ до " + metroTextBox3.Text + " уровня!", false);
             }
-            
+           
         }
 
         private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
@@ -254,13 +254,23 @@ namespace BaseSQL
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            int PingResult;
+            
             if(label1.Text == "Online")
             {
                 System.Net.NetworkInformation.Ping ping = new System.Net.NetworkInformation.Ping();
                 System.Net.NetworkInformation.PingReply pingReply = ping.Send(DataBase._host);
                 System.Net.IPAddress addres = pingReply.Address;
                 label3.Text = pingReply.RoundtripTime.ToString("00 мс");
+                int PingResult;
+                PingResult = Convert.ToInt16(pingReply.RoundtripTime);
+                if(PingResult >= 100)
+                {
+                    label3.ForeColor = Color.Red;
+                }
+                else
+                {
+                    label3.ForeColor = Color.Green;
+                }
                 
             }
             else
@@ -269,22 +279,8 @@ namespace BaseSQL
                 label3.Enabled = false;
             }
 
-            //if(label3.Text == "00 мс")
-            //{
-            //    label3.ForeColor = Color.Red;
-            //}
-            
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //private void label3_Click(object sender, EventArgs e)
-        //{
-
-        //}
     }
 
 }

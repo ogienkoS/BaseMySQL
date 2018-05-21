@@ -75,9 +75,9 @@ namespace BaseSQL
                     home frm = new home();
                     frm.Show();
                     this.Hide();
-                    SoundPlayer Pl = new SoundPlayer();
-                    Pl.SoundLocation = "C:\\WINDOWS\\Media\\notify.wav";
-                    Pl.Play();
+                    //SoundPlayer Pl = new SoundPlayer();
+                    //Pl.SoundLocation = "C:\\WINDOWS\\Media\\notify.wav";
+                    //Pl.Play();
                 }
 
             }
@@ -88,9 +88,9 @@ namespace BaseSQL
                 //label1.ForeColor = Color.Red;
                 metroLabel1.Text = "Ошибка подключения к базе";
                 //label1.Text = "Ошибка подключения к базе";
-                SoundPlayer Pl = new SoundPlayer();
-                Pl.SoundLocation = "C:\\WINDOWS\\Media\\Windows Unlock.wav";
-                Pl.Play();
+                //SoundPlayer Pl = new SoundPlayer();
+                //Pl.SoundLocation = "C:\\WINDOWS\\Media\\Windows Unlock.wav";
+                //Pl.Play();
 
             }
             metroProgressSpinner1.Visible = false;
