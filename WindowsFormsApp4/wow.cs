@@ -27,6 +27,7 @@ namespace BaseSQL
             potok.Start();
             timer2.Enabled = true;
             
+            
         }
 
         void CheckConnection()
@@ -60,6 +61,7 @@ namespace BaseSQL
                         label1.Text = "Offline";
                         metroButton1.Enabled = false;
                         metroButton2.Enabled = false;
+                        metroButton3.Enabled = false;
                         metroTextBox1.Enabled = false;
                         metroTextBox2.Enabled = false;
                         metroTextBox3.Enabled = false;
@@ -138,6 +140,7 @@ namespace BaseSQL
 
         private void metroButton2_Click_1(object sender, EventArgs e)
         {
+
             if ((metroTextBox2.Text.Equals("")) || ((metroTextBox3.Text.Equals(""))))
             {
                 label2.Text = "Заполните поля ID и Гм-LvL";
@@ -263,7 +266,7 @@ namespace BaseSQL
                 label3.Text = pingReply.RoundtripTime.ToString("00 мс");
                 int PingResult;
                 PingResult = Convert.ToInt16(pingReply.RoundtripTime);
-                if(PingResult >= 100)
+                if (PingResult >= 100)
                 {
                     label3.ForeColor = Color.Red;
                 }
@@ -271,16 +274,39 @@ namespace BaseSQL
                 {
                     label3.ForeColor = Color.Green;
                 }
-                
+
+                if (PingResult == 0)
+                {
+                    Convert.ToString(label3.Text = "localhost");
+
+                }
+
             }
             else
             {
                 timer2.Enabled = false;
                 label3.Enabled = false;
             }
-
+            
         }
 
+        
+
+        private void metroButton3_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string delete_gm = ("DELETE FROM account_access WHERE (id = '" + metroTextBox2.Text + "')");
+                MySqlCommand query_delete_gm = new MySqlCommand(delete_gm, DataBase.connect);
+                query_delete_gm.Prepare();
+                query_delete_gm.ExecuteNonQuery();
+                AddLog("Аккаунт с ID = " + metroTextBox2.Text + " удален из таблицы account_access.", false);
+            }
+            catch (Exception ex)
+            {
+                AddLog(ex.Message, false);
+            }
+        }
     }
 
 }

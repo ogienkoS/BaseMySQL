@@ -41,12 +41,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,7 +63,6 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(23, 63);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -162,6 +161,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.metroButton3);
             this.groupBox1.Controls.Add(this.metroLabel5);
             this.groupBox1.Controls.Add(this.metroLabel4);
             this.groupBox1.Controls.Add(this.metroLabel1);
@@ -173,6 +173,15 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Введи имя аккаунта:";
+            // 
+            // metroButton3
+            // 
+            this.metroButton3.Location = new System.Drawing.Point(142, 45);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(127, 23);
+            this.metroButton3.TabIndex = 5;
+            this.metroButton3.Text = "Удалить ГМ-аккаунт";
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click_1);
             // 
             // metroLabel5
             // 
@@ -214,16 +223,6 @@
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "Чекнуть ID аккаунта";
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(462, 232);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Персонаж";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // metroLabel2
             // 
@@ -285,6 +284,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.metroLabel2);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "wow";
             this.Text = "World Of Warcraft";
@@ -306,7 +306,6 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private MetroFramework.Controls.MetroButton metroButton2;
         private System.Windows.Forms.GroupBox groupBox3;
         private MetroFramework.Controls.MetroTextBox metroTextBox3;
@@ -327,5 +326,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer2;
         private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroButton metroButton3;
     }
 }
