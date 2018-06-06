@@ -42,7 +42,7 @@ namespace BaseSQL
                         MetroStyleManager.Default.Style = MetroColorStyle.Green;
                         label1.ForeColor = Color.Green;
                         label1.Text = "Online";
-                        metroButton1.Enabled = true;
+                        check_btn.Enabled = true;
                         metroButton2.Enabled = true;
                         metroTextBox1.Enabled = true;
                         metroTextBox2.Enabled = true;
@@ -59,7 +59,7 @@ namespace BaseSQL
                         MetroStyleManager.Default.Style = MetroColorStyle.Red;
                         label1.ForeColor = Color.Red;
                         label1.Text = "Offline";
-                        metroButton1.Enabled = false;
+                        check_btn.Enabled = false;
                         metroButton2.Enabled = false;
                         metroButton3.Enabled = false;
                         metroTextBox1.Enabled = false;
@@ -277,7 +277,7 @@ namespace BaseSQL
 
                 if (PingResult == 0)
                 {
-                    Convert.ToString(label3.Text = "localhost");
+                    label3.Text = "localhost";
 
                 }
 
@@ -307,6 +307,14 @@ namespace BaseSQL
                 AddLog(ex.Message, false);
             }
         }
+
+       
+        private void metroButton3_MouseDown(object sender, MouseEventArgs e)
+        {
+            AddLog("3", false);
+        }
+
+       
     }
 
 }

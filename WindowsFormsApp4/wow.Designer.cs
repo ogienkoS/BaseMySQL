@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(wow));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -41,12 +42,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.check_btn = new MetroFramework.Controls.MetroButton();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -71,6 +71,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.metroButton3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.richTextBox1);
@@ -85,6 +86,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Аккаунт";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // metroButton3
+            // 
+            this.metroButton3.Location = new System.Drawing.Point(154, 87);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(127, 23);
+            this.metroButton3.TabIndex = 5;
+            this.metroButton3.Text = "Удалить ГМ-аккаунт";
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click_1);
             // 
             // label2
             // 
@@ -161,27 +171,17 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.metroButton3);
             this.groupBox1.Controls.Add(this.metroLabel5);
             this.groupBox1.Controls.Add(this.metroLabel4);
             this.groupBox1.Controls.Add(this.metroLabel1);
             this.groupBox1.Controls.Add(this.metroTextBox1);
-            this.groupBox1.Controls.Add(this.metroButton1);
+            this.groupBox1.Controls.Add(this.check_btn);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(450, 70);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Введи имя аккаунта:";
-            // 
-            // metroButton3
-            // 
-            this.metroButton3.Location = new System.Drawing.Point(142, 45);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(127, 23);
-            this.metroButton3.TabIndex = 5;
-            this.metroButton3.Text = "Удалить ГМ-аккаунт";
-            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click_1);
             // 
             // metroLabel5
             // 
@@ -215,14 +215,14 @@
             this.metroTextBox1.Size = new System.Drawing.Size(120, 23);
             this.metroTextBox1.TabIndex = 0;
             // 
-            // metroButton1
+            // check_btn
             // 
-            this.metroButton1.Location = new System.Drawing.Point(142, 19);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(127, 23);
-            this.metroButton1.TabIndex = 2;
-            this.metroButton1.Text = "Чекнуть ID аккаунта";
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.check_btn.Location = new System.Drawing.Point(148, 19);
+            this.check_btn.Name = "check_btn";
+            this.check_btn.Size = new System.Drawing.Size(127, 23);
+            this.check_btn.TabIndex = 2;
+            this.check_btn.Text = "Чекнуть ID аккаунта";
+            this.check_btn.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroLabel2
             // 
@@ -314,7 +314,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton check_btn;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
